@@ -1,0 +1,12 @@
+html img {width:auto !important;}
+
+.col-md-4 {float:left; width:33.3333%; *width:32%;}
+.col-md-5 {float:left; width: 41.66666667%; *width:40%;}
+.col-md-6 {float:left; width:50%; *width:47%;}
+.col-md-7 {float:left; width:58.33333333%; *width:55%;}
+.col-md-8 {float:left; width: 66.66666667%; *width:64%;}
+.col-md-3 {float:left; width:25%; *width:21%;}
+
+.wrapper {width:1135px;}
+input[type=button] {*top:0;}
+input[type=text] {*position:relative; *top:12px;}

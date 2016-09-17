@@ -1,0 +1,23 @@
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bgcolor="#e6e7e9">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" width="620" border="0" align="center">
+<tr><td style="padding-bottom:20px; padding-top:30px;"><a href="{site_url}"><img src="{theme_url}images/logo.png" alt="" width="250" border="0"></a></td></tr>
+<tr>
+  <td style="font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:20px; color:#fff; text-align:right; background:#212121; padding:0px 10px 3px 10px;">New Signup ({store_name})</td></tr>
+<tr><td style="background:#fff; padding:20px 15px; font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:14px; color:#666666;">
+<p>Dear {fullname},</p>
+<p>New signup received at {site_represent_title}.<br />
+To see the complete details, pls login to admin panel. Following are some basic details,<br />
+<strong>Store Name:</strong> {store_name}<br />
+<strong>Store Email Address:</strong> {store_email}<br />
+<strong>Store Phone:</strong> {store_phone}</p>
+<p>Sincerely,<br />
+{site_represent_title} Technical Team<br />
+<a href="{site_url}">{site_url}</a></p></td></tr>
+<tr>
+  <td style="font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:12px; color:#9c9ea1; padding-top:15px; padding-bottom:30px;">&copy; {site_represent_title} 2015. All Rights Reserved.</td></tr>
+</table>
+</td>
+</tr>
+</table>

@@ -1,0 +1,32 @@
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bgcolor="#e6e7e9">
+	<tr>
+    	<td colspan="2">Welcome to  the RMS. Your account details are as below:</td>
+    </tr>
+	<tr>
+    	<td>Username: 
+        </td>
+        <td>{email}</td>
+    </tr>
+	<tr>
+    	<td>Password: 
+        </td>
+        <td>{password}</td>
+    </tr>
+    <tr>
+    	<td>Link:</td>
+        <td>http://localhost/hrms/rms/vacancies</td>
+    </tr>
+	<tr>
+        <td><p>Sincerely,<br />
+            {site_represent_title} Team<br />
+            <a href="{site_url}">{site_url}</a></p>
+        </td>
+    </tr>
+	<tr>
+    	<td style="font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:12px; color:#9c9ea1; padding-top:15px; padding-bottom:30px;" colspan="2">
+    &copy; {site_represent_title} 2014. All Rights Reserved.</td>
+    </tr>
+</table>
+</td>
+</tr>
+</table>

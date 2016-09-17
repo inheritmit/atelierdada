@@ -1,0 +1,9 @@
+<p>{name} is invited you to join the Problem.</p>
+<p>How would you like to respond?</p>
+<p><a href="{join_url}">Join</a></p>
+<p>If you are unable to open the page, please copy and paste the following link into your browser bar.<br />
+{join_url}</p>
+<p>For assistance, please contact us at <a href="mailto:{support_email}">{support_email}</a></p>
+<p>Sincerely,<br />
+{site_title} Team</p>
+<p style="color:#999;">&copy; {site_title} 2013,  All rights reserved</p>

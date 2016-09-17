@@ -1,0 +1,29 @@
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bgcolor="#e6e7e9">
+<tr>
+<td>
+<table cellpadding="0" cellspacing="0" width="620" border="0" align="center">
+<tr><td style="padding-bottom:20px; padding-top:30px;"><img src="{theme_url}img/logo.png" alt="" width="342" height="98" border="0" /></td></tr>
+<tr><td style="font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:20px; color:#fff; text-align:right; background:#212121; padding:0px 10px 3px 10px;">Your account has been activated</td></tr>
+<tr><td style="background:#fff; padding:20px 15px; font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:14px; color:#666666;">
+<p>Dear {fullname},</p>
+<p>Your account at {site_represent_title} has been activated.<br />
+To complete the activation process, You must following these steps,<br />
+- Click set your account password button below.<br />
+<a style="background:#ffa645; padding:0px 20px; border:1px solid #f18400; height:36px; line-height:36px; font-size:18px; color:#fff; text-align:center; cursor:pointer; display:inline-block; vertical-align:middle; overflow:visible; text-shadow:1px 1px 1px #b87832; font-family:Open Sans,Arial, Helvetica, sans-serif; text-decoration:none; border-radius:2px;" href="{password_url}">Set your account password</a><br />
+If you are not able to click on the button above, copy & paste the following URL to your browser address bar<br />
+<a href="{password_url}"><strong>{password_url}</strong></a><br />
+- Enter the password and confirm the password<br />
+- Click <strong>Save Password</strong> button</p>
+<p>Once you set your account password, you will be able to login to the system using your email address and password.</p>
+<p><strong>Important note:</strong> Please add this "from" email address ({mail_from})<br />
+to your contact list so that notifications from our site don\'t get caught in your spam/junk mail folder.</p>
+<p>For assistance, please contact us at <a href="mailto:{admin_email}">{admin_email}</a></p>
+<p>Sincerely,<br />
+{site_represent_title} Team<br />
+<a href="{site_url}">{site_url}</a></p>
+</td></tr>
+<tr><td style="font-family:Open Sans,Arial, Helvetica, sans-serif; font-size:12px; color:#9c9ea1; padding-top:15px; padding-bottom:30px;">&copy; {site_represent_title} 2013. All Rights Reserved.</td></tr>
+</table>
+</td>
+</tr>
+</table>
