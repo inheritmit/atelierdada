@@ -70,8 +70,7 @@
 <link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>assets/jquery-ui/jquery-ui.min.css" media="all"/>
 <link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>assets/bootstrap-fileupload/bootstrap-fileupload.css" />
 <link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>assets/bootstrap-datepicker/css/datepicker.css" />
-<link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>css/inputosaurus.css" media="all"/>
-<link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>vendor/palette-color-picker/palette-color-picker.css">
+<link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>vendor/inputosaurus/css/inputosaurus.css" media="all"/>
 <style type="text/css">
     textarea.ckeditor {
         visibility: visible !important;
@@ -167,12 +166,6 @@
                                     <?php
                                 }
                             ?>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="color-picker" class="control-label col-lg-2">Color :</label>
-                        <div class="col-lg-2">
-                            <input type="text" readonly data-palette='["#00bcbc","#ffb700"]' name="content_color" id="color-picker" maxlength="10" value="<?php echo @$contentDetail['strColor']; ?>" class="form-control" style="display: inline-block;" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -507,18 +500,15 @@
         </div>
     </form>
 </div>
-<script type="text/javascript" src="<?php _e($theme_url);?>js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?php _e($theme_url);?>js/inputosaurus.js"></script>
+<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php _e($theme_url);?>vendor/inputosaurus/js/inputosaurus.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url); ?>assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url); ?>assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="<?php _e($theme_url); ?>assets/jquery-validate/jquery.validate.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url); ?>assets/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="<?php _e($theme_url); ?>vendor/palette-color-picker/palette-color-picker.min.js"></script>
 <script type="text/javascript">
     var count = <?php _e($cnt);?>;
     $(document).ready(function () {
-
-        $('#color-picker').paletteColorPicker();
 
         $("#content_form").validate();
 
@@ -551,7 +541,7 @@
             if(dtype == 'text') {
                 html += '<label for="'+dtype+'_'+count+'" class="control-label col-lg-2">Descriptive Text:</label><div class="col-lg-7 row"><textarea name="'+dtype+'['+count+']" id="'+dtype+'_'+count+'" class="form-control ckeditor" rows="15"></textarea></div>';
             } else if(dtype == 'image') {
-                html += '<label for="'+dtype+'_'+count+'" class="control-label col-lg-2">Images: <a onclick="location.href='javascript:void(0);'" class="add-more btn btn-success btn-xs" data-count="'+count+'" data-type="'+dtype+'"><i class="fa fa-plus"></i> More</a> </label><div class="col-lg-7 row" id="images'+count+'"><div class="col-lg-10 row"><input type="text" name="'+dtype+'_title['+count+']" id="'+dtype+'_title_'+count+'" maxlength="50" value="" class="form-control" placeholder="Heading" /></div><div class="col-lg-10 row"><input type="file" name="'+dtype+'['+count+'][]" id="'+dtype+'_'+count+'_1" value="" class="form-control" /></div><div class="col-lg-2">Actions</div></div>';
+                html += '<label for="'+dtype+'_'+count+'" class="control-label col-lg-2">Images: <a onclick="location.href=\'javascript:void(0);\'" class="add-more btn btn-success btn-xs" data-count="'+count+'" data-type="'+dtype+'"><i class="fa fa-plus"></i> More</a> </label><div class="col-lg-7 row" id="images'+count+'"><div class="col-lg-10 row"><input type="text" name="'+dtype+'_title['+count+']" id="'+dtype+'_title_'+count+'" maxlength="50" value="" class="form-control" placeholder="Heading" /></div><div class="col-lg-10 row"><input type="file" name="'+dtype+'['+count+'][]" id="'+dtype+'_'+count+'_1" value="" class="form-control" /></div><div class="col-lg-2">Actions</div></div>';
             } else if(dtype == 'file-upload') {
                 html += '<label for="'+dtype+'_'+count+'" class="control-label col-lg-2">File Upload: </label><div class="col-lg-7 row"><div class="col-lg-10 row"><input type="text" name="'+dtype+'_title['+count+']" id="'+dtype+'_title_'+count+'" maxlength="50" value="" class="form-control" placeholder="Heading" /></div><div class="col-lg-10 row"><input type="file" name="'+dtype+'['+count+']" id="'+dtype+'_'+count+'" value="" class="form-control" /></div></div>';
             } else if(dtype == 'social') {
@@ -566,7 +556,7 @@
                 html += '<label for="'+dtype+'_'+count+'" class="control-label col-lg-2">Mobile Application Links:</label><div class="col-lg-7 row"><div class="col-lg-10 row"><input type="text" name="'+dtype+'_title['+count+']" id="'+dtype+'_title_'+count+'" maxlength="25" value="" class="form-control" placeholder="Heading" /></div><div class="col-lg-10 row"><input type="text" name="'+dtype+'_android['+count+']" id="'+dtype+'_android_'+count+'" maxlength="255" value="" class="form-control" placeholder="Google Play Store URL" /></div><div class="col-lg-10 row"><input type="text" name="'+dtype+'_ios['+count+']" id="'+dtype+'_ios_'+count+'" maxlength="255" value="" class="form-control" placeholder="Apple App Store URL" /></div></div>';
             }
 
-            html += '<div class="col-lg-1"><input type="text" name="'+dtype+'_position['+count+']" id="'+dtype+'_position_'+count+'" maxlength="2" value="'+count+'" class="form-control position" placeholder="Position" /></div><div class="col-lg-2"><p><a onclick="location.href='javascript:void(0);'" class="fa fa-trash-o btn btn-danger" onclick="deleteBlock('+count+');" title="Delete Content Block"></a></p></div>';
+            html += '<div class="col-lg-1"><input type="text" name="'+dtype+'_position['+count+']" id="'+dtype+'_position_'+count+'" maxlength="2" value="'+count+'" class="form-control position" placeholder="Position" /></div><div class="col-lg-2"><p><a onclick="location.href=\'javascript:void(0);\'" class="fa fa-trash-o btn btn-danger" onclick="deleteBlock('+count+');" title="Delete Content Block"></a></p></div>';
 
             html += '</div>'
 

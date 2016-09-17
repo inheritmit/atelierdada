@@ -43,24 +43,9 @@
                         <?php foreach($cont_obj::$_types as $code => $type) { ?>
                         <li<?php if(strstr(_env('request_uri'), 'content/list?t='.$code)) {?> class="active"<?php } ?>><a href="<?php _e(SITE_URL);?>content/list?t=<?php _e($code);?>"><?php _e($type);?></a></li>
                         <?php } ?>
-                        <li<?php if(strstr(_env('request_uri'), 'feature')) {?> class="active"<?php } ?>><a href="<?php _e(SITE_URL);?>content/features"><strong>Studio Features</strong></a></li>
-                        <li<?php if(strstr(_env('request_uri'), 'trending')) {?> class="active"<?php } ?>><a href="<?php _e(SITE_URL);?>content/trending"><strong>Studio Trending</strong></a></li>
                     </ul>
                 </li>
                 <?php } ?>
-
-                <!--Master-->
-
-                <!--<li class="dropdown <?php /*if(strstr(_env('request_uri'), _b64('category')) || strstr(_env('request_uri'), 'master')) {*/?>
-                 active<?php /*} */?>">
-                    <a href="<?php /*_e(SITE_URL);*/?>content/list" data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle
-                    <?php /*if(strstr(_env('request_uri'), 'master')) {*/?> active<?php /*} */?>">
-                        <i class="fa fa-user"></i>Master</a>
-                    <ul class="dropdown-menu">
-                        <li<?php /*if(strstr(_env('request_uri'), 'master')) {*/?> class="active"<?php /*} */?>>
-                            <a href="<?php /*_e(SITE_URL);*/?>master/list?t=<?php /*_e(_b64('category'));*/?>">Manage Content Type</a></li>
-                    </ul>
-                </li>-->
 
                 <!-- Media -->
                 <?php if($account_obj->checkModule('media')) { ?>
