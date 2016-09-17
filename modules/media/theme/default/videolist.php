@@ -13,8 +13,8 @@ if(isset($_SESSION['error'])){
 	unset($_SESSION['error']);
 }
 ?>
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 <link href="<?php _e($theme_url);?>assets/fancybox/jquery.fancybox.css" rel="stylesheet" />
 <script src="<?php _e($theme_url);?>assets/fancybox/jquery.fancybox.js" type="text/javascript"></script>
 

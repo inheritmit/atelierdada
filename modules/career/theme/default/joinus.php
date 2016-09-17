@@ -1,8 +1,8 @@
 <?php
 	$careerDetail = $career_obj->getCareer("id=$_GET[id]");
 ?>
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 <h3 class="timeline-title clear">
 	<i class="fa fa-file-text-o"></i> &nbsp; Join Us - <?php echo $careerDetail['strTitle']; ?>
 </h3>

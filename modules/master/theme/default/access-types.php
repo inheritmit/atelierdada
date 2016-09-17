@@ -1,5 +1,5 @@
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 <h3 class="timeline-title">
 	<i class="fa fa-user"></i>&nbsp; Access Types
 	<a href="<?php echo _e($module_url);?>/add-access-type" class="btn btn-primary ar"><i class="fa fa-plus"></i> Add New</a><div class="clear"></div>

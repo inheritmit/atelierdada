@@ -17,11 +17,14 @@
                 <?php } ?>
 
                 <?php if($account_obj->checkModule('page')) { ?>
-                <li class="dropdown<?php if(strstr(_env('request_uri'), _b64('navigation')) || strstr(_env('request_uri'), 'page')) {?> active<?php } ?>"><a href="<?php _e(SITE_URL);?>page/list" data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle <?php if(strstr(_env('request_uri'), 'page')) {?> active<?php } ?>"><i class="fa fa-file-text-o"></i> Pages</a>
-                    <ul class="dropdown-menu">
-                        <li<?php if(strstr(_env('request_uri'), '/list')) {?> class="active"<?php } ?>><a href="<?php _e(SITE_URL);?>page/list">All Pages</a></li>
-                        <li<?php if(strstr(_env('request_uri'), 'contact-list')) {?> class="active"<?php } ?>><a href="<?php _e(SITE_URL);?>page/contact-list">Contacts Enquiries</a></li>
-                    </ul>
+                <li class="dropdown<?php if(strstr(_env('request_uri'), '/pages')) {?> active<?php } ?>">
+                    <a href="<?php _e(SITE_URL);?>content/pages"<?php if(strstr(_env('request_uri'), '/pages')) {?> class="active"<?php } ?>><i class="fa fa-file-text-o"></i> Pages</a>
+                </li>
+                <?php } ?>
+
+                <?php if($account_obj->checkModule('contact')) { ?>
+                <li<?php if(strstr(_env('request_uri'), 'contact-list')) {?> class="active"<?php } ?>>
+                    <a href="<?php _e(SITE_URL);?>content/contact-list">Contacts Enquiries</a>
                 </li>
                 <?php } ?>
 

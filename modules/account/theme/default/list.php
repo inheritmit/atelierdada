@@ -10,8 +10,8 @@
 		$pg = $req['page'];
   	}
 ?>
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 
 <h3 class="timeline-title">
 	<i class="fa fa-archive"></i>&nbsp;Manage User

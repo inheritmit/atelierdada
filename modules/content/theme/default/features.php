@@ -1,6 +1,6 @@
 <?php $label = 'Feature'; ?>
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-<link href="<?php _e($theme_url);?>assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+<link href="<?php _e($theme_url);?>assets/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 <h3 class="timeline-title clear">
 	<i class="fa fa-file-text-o"></i> &nbsp; Manage <?php _e($label);?>
 	<a href="<?php echo _e($module_url);?>/add-feature" class="btn btn-primary ar"><i class="fa fa-plus"></i> Add New</a>
