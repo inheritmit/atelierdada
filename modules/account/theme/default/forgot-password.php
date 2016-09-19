@@ -16,7 +16,7 @@
         <label><input name="cancel" class="button" type="button" id="cancel-button" value="Cancel"  onClick="window.location='<?php _e($theme_url);?>'" /></label>
     </form>
 </div>
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js" ></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js" ></script>
 <script type="text/javascript">
 	$(function()
 	{

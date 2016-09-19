@@ -28,7 +28,7 @@
 	} else if(isset($req['slug']) && $req['slug'] == 'do') {
 	    $layout_path = '';
 	}
-    if(isset($req['parent']) && in_array($req['parent'], array('reset-password', 'login'))) {
+    if(isset($req['parent']) && in_array($req['parent'], array('reset-password', 'login')) && !isset($req['slug'])) {
 		$layout_path = _layout('main-login-page');
     }
     if(isset($req['parent']) && in_array($req['parent'], array('new-password'))) {

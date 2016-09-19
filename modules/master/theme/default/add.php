@@ -30,18 +30,6 @@ div.element { float:left; width:580px; }
 label.entry { float:left; width: 250px; padding: 5px; }
 label.element-entry { padding: 5px; float: none; }
 div.box { border: 1px solid #DDD; background:#f4f3ee; padding: 10px; height:200px; overflow:auto; margin:5px 0; -moz-box-shadow: inset 0 0 2px #e2e2e2; -webkit-box-shadow: inset 0 0 2px #e2e2e2; box-shadow: inset 0 0 2px #e2e2e2; }
-
-
-textarea.ckeditor {
-    visibility: visible !important;
-    display: block !important;
-    height: 0 !important;
-    border: none !important;
-    resize:none;
-    overflow: hidden;
-    padding: 0 !important;
-}
-
 </style>
 <?php // include('submenu.php');?>
 <h3 class="timeline-title"><i class="fa fa-user"></i>&nbsp; <?php echo "Content Type";// _e($name);?></h3>
@@ -64,7 +52,7 @@ textarea.ckeditor {
       </div>
           
       <div class="form-group"><label for="desc" class="control-label col-lg-2">Description:</label>
-          <div class="col-lg-10"><textarea name="description" id="description" type="text" class="form-control ckeditor required"><?php _e(@$master_details['txtDescription']);?></textarea></div>
+          <div class="col-lg-10"><textarea name="description" id="description" type="text" class="form-control"><?php _e(@$master_details['txtDescription']);?></textarea></div>
       </div>
 	 
       <div class="form-group"> 
@@ -78,35 +66,20 @@ textarea.ckeditor {
   </div>
 </section>
 
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js" ></script>
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js" ></script>
 <script type="text/javascript">
 $(document).ready( function() {
 	$("#master_form").validate({
         rules: {
             '<?php _e($input_name);?>': {
                 required: true
-            },description: {
-                required: function() {
-                    CKEDITOR.instances.description.updateElement();
-                }
             }
         },
         messages: {
             '<?php _e($input_name);?>': {
 				required: "Content type is required"
             },
-            'desc': "Required"
-		},
-        errorPlacement: function(error, element)
-        {
-            if (element.attr("name") == "description")
-            {
-                error.insertBefore("textarea#description");
-            } else {
-                error.insertBefore(element);
-            }
-        }
+		}
 	});
 });
 

@@ -169,8 +169,8 @@
 <script type="text/javascript" src="<?php _e($theme_url);?>js/inputosaurus.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url);?>assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url);?>assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js"></script>
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/additional-methods.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/additional-methods.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url);?>assets/ckeditor/ckeditor.js"></script>
 
 <script type="text/javascript">

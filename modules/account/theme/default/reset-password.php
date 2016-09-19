@@ -6,7 +6,7 @@ if($account == 404) {
 }
 ?>
 <link rel="stylesheet" type="text/css" href="<?php _e($theme_url);?>css/jquery.autocomplete.css" />
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js" ></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js" ></script>
 <script type="text/javascript">
 $(document).ready(function(e) {
 	$("#resetpassword").validate({

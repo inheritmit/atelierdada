@@ -4164,6 +4164,15 @@ td.details table tr td, .dataTable tr:last-child {
     background-color: #FFFFFF;
 }
 
+.adv-table td.icons {
+    text-align: center;
+}
+
+.adv-table td.icons .fa {
+    padding: 5px;
+    font-size: 16px;
+}
+
 .adv-table .dataTables_filter label input {
     float: right;
     margin-left: 10px;

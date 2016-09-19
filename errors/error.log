@@ -208,3 +208,30 @@
 [19-Dec-2015 23:20:17 Asia/Kolkata] PHP Notice:  Use of undefined constant SITE_REPRESENT_TITLE - assumed 'SITE_REPRESENT_TITLE' in /home/ftpappdemo/appdemo.co.in/webcms/themes/default/footer.php on line 3
 [19-Dec-2015 23:21:15 Asia/Kolkata] PHP Notice:  Use of undefined constant SITE_REPRESENT_TITLE - assumed 'SITE_REPRESENT_TITLE' in /home/ftpappdemo/appdemo.co.in/webcms/themes/default/footer.php on line 3
 [19-Dec-2015 23:23:59 Asia/Kolkata] PHP Notice:  Use of undefined constant SITE_REPRESENT_TITLE - assumed 'SITE_REPRESENT_TITLE' in /home/ftpappdemo/appdemo.co.in/webcms/themes/default/footer.php on line 3
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP Fatal error:  Call to a member function prepare() on null in /var/www/html/atelier/lib/classes/pdo.class.php on line 508
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP Stack trace:
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   1. {main}() /var/www/html/atelier/index.php:0
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   2. include_once() /var/www/html/atelier/index.php:4
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   3. db_class->db_class() /var/www/html/atelier/include.php:24
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   4. db_class->connect() /var/www/html/atelier/lib/classes/pdo.class.php:207
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   5. db_class->printLastError() /var/www/html/atelier/lib/classes/pdo.class.php:239
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   6. db_class->insertByArray() /var/www/html/atelier/lib/classes/pdo.class.php:1007
+[19-Sep-2016 12:41:35 Asia/Kolkata] PHP   7. db_class->getColumnNames() /var/www/html/atelier/lib/classes/pdo.class.php:425
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP Fatal error:  Call to a member function prepare() on null in /var/www/html/atelier/lib/classes/pdo.class.php on line 508
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP Stack trace:
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   1. {main}() /var/www/html/atelier/index.php:0
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   2. include_once() /var/www/html/atelier/index.php:4
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   3. db_class->db_class() /var/www/html/atelier/include.php:24
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   4. db_class->connect() /var/www/html/atelier/lib/classes/pdo.class.php:207
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   5. db_class->printLastError() /var/www/html/atelier/lib/classes/pdo.class.php:239
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   6. db_class->insertByArray() /var/www/html/atelier/lib/classes/pdo.class.php:1007
+[19-Sep-2016 14:19:37 Asia/Kolkata] PHP   7. db_class->getColumnNames() /var/www/html/atelier/lib/classes/pdo.class.php:425
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP Fatal error:  Call to a member function prepare() on null in /var/www/html/atelier/lib/classes/pdo.class.php on line 508
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP Stack trace:
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   1. {main}() /var/www/html/atelier/index.php:0
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   2. include_once() /var/www/html/atelier/index.php:4
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   3. db_class->db_class() /var/www/html/atelier/include.php:24
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   4. db_class->connect() /var/www/html/atelier/lib/classes/pdo.class.php:207
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   5. db_class->printLastError() /var/www/html/atelier/lib/classes/pdo.class.php:239
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   6. db_class->insertByArray() /var/www/html/atelier/lib/classes/pdo.class.php:1007
+[19-Sep-2016 14:19:38 Asia/Kolkata] PHP   7. db_class->getColumnNames() /var/www/html/atelier/lib/classes/pdo.class.php:425

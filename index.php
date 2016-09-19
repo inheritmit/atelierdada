@@ -18,7 +18,7 @@
         include_once(SITE_PATH.'include/authenticate.php');
     }
 	
-	//echo $layout_path; exit;
+	// echo $layout_path; exit;
     // echo $template; exit;
 	
 	// load layout file

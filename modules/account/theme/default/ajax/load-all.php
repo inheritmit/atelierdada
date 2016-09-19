@@ -46,7 +46,7 @@
                        <td><a href="<?php _e($module_url);?>/profile?id=<?php _e($account['id']);?>"><?php _e($account['strFirstName'].' '.$account['strLastName']);?></a></td>
                        <td><?php _e($account['atName']);?></td>
                        
-                       <td class="action">
+                       <td class="action icons">
                          <a href="<?php _e($module_url);?>/edit?id=<?php echo $account['id'];?>" class="fa fa-edit" title="Edit Access User"></a>
                          <span id="activate_<?php echo $account['id'];?>">
                          <a href='javascript:void(0);'  <?php if($account['tinStatus']==1){ echo $class1; echo $title1; } else { echo $class; echo $title; }?> data-url="account/load/change-status?status=<?php echo $account['tinStatus']?>&id=<?php echo $account['id'];?>" data-container="#activate_<?php echo $account['id'];?>" data-action="add"></a>

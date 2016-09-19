@@ -74,7 +74,7 @@
      </form>
 </div>
 
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js"></script>
 <script type="text/javascript" src="<?php _e($theme_url);?>assets/ckeditor/ckeditor.js"></script>
 
 <script type="text/javascript">

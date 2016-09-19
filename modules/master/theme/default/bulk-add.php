@@ -8,7 +8,7 @@ label.entry { float:left; width: 250px; padding: 5px; }
 label.element-entry { padding: 5px; float: none; }
 div.box { border: 1px solid #DDD; background:#f4f3ee; padding: 10px; height:200px; overflow:auto; margin:5px 0; -moz-box-shadow: inset 0 0 2px #e2e2e2; -webkit-box-shadow: inset 0 0 2px #e2e2e2; box-shadow: inset 0 0 2px #e2e2e2; }
 </style>
-<script type="text/javascript" src="<?php _e($theme_url);?>assets/jquery-validate/jquery.validate.js"></script>
+<script type="text/javascript" src="<?php _e(ASSET_URL); ?>jquery-validate/jquery.validate.js"></script>
 <script type="text/javascript">
 $(document).ready( function() {
 	$("#<?php _e($type);?>_form").validate({
