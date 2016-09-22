@@ -106,7 +106,7 @@
                   if(isset($contentDetail['strContentImg']) && !empty($contentDetail['strContentImg'])) {
                     //echo UPLOAD_PATH . 'content/' . @$path . @$contentDetail['strContentImg']; exit;
                        if ($action = 'edit' && file_exists(UPLOAD_PATH . 'content/' . @$path . @$contentDetail['strContentImg'])) {
-                        $imgurl = SITE_URL . 'file-manager/content/' . $path . $contentDetail['strContentImg'];
+                        $imgurl = UPLOAD_URL.'content/' . $path . $contentDetail['strContentImg'];
 
                         } else {
                         $imgurl = SITE_URL . 'themes/default/img/no-image.gif';

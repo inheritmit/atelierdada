@@ -28,7 +28,7 @@
                                     <div class="col-md-4">
                                         <div class="bigBlog"><a href="#" class="blogLink">
                                                 <div class="picView">
-                                                    <img src="<?php echo SITE_URL . 'file-manager/content/casestudies/' . $content['strContentImg']; ?>" alt="" class="picW100p"/>
+                                                    <img src="<?php echo UPLOAD_URL.'content/casestudies/' . $content['strContentImg']; ?>" alt="" class="picW100p"/>
                                                 </div>
                                                 <h3><?php _e($content['strTitle']); ?></h3> Read More </a>
 

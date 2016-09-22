@@ -31,7 +31,7 @@
 
 ?>
 
-<div class="productList productBgPic col-md-12 animatedParent" style="background:url(<?php echo SITE_URL . 'file-manager/content/product/' . $value['strContentImg']; ?>) no-repeat right center;">
+<div class="productList productBgPic col-md-12 animatedParent" style="background:url(<?php echo UPLOAD_URL.'content/product/' . $value['strContentImg']; ?>) no-repeat right center;">
     <div class="col-md-4 animated fadeInLeftShort">
         <div class="number"><?php _e($i++); ?></div>
         <h2><?php _e($value['strTitle']);?></h2>

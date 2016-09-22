@@ -5,6 +5,13 @@ class block extends content {
     protected $_rel_content_blocks = 'rel_content_blocks';
     protected $_rel_block_details = 'rel_block_details';
 
+    public static $SocialShare = array(
+        'google' => 'http://',
+        'facebook' => 'http://',
+        'twitter' => 'http://',
+        'linked-in' => 'http://',
+    );
+
     public static $_mobile_apps = array('android', 'ios');
 
     /** Update content block status for provided ID
