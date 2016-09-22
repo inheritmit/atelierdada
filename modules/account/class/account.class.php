@@ -22,9 +22,6 @@ class account extends db_class
 	 */
 	protected $_reset_password = 'rel_reset_password';
 
-
-
-
 	/** Inserts data into mst_accounts table
 	 * @param array $data: array of the table field name and post data of the fields
 	 * @return bool|int : id of the row inserted otherwise false on failure
@@ -121,11 +118,11 @@ class account extends db_class
 	 */
 	function regArray($data)
 	{
-		$modified = array('strFirstName' => $data['first_name'],
+		$modified = array(
+            'strFirstName' => $data['first_name'],
 			'strLastName' => $data['last_name'],
 			'strEmail' => $data['email'],
 			'strPassword' => $data['password'],
-			'strActivation' => $data['activation'],
 			'dtiCreated' => TODAY_DATETIME);
 		return $modified;
 	}
@@ -150,7 +147,7 @@ class account extends db_class
 	 */
 	function getRegistrations($where = '1')
 	{
-		$sql = "select reg.*, main.enmActivated
+		$sql = "select main.*
 				from " . $this->_table . " as main
 				where " . $where;
 		return $this->getResults($sql);
@@ -163,7 +160,7 @@ class account extends db_class
 	 */
 	function getRegistrationDetails($where)
 	{
-		$sql = "select reg.*, main.enmActivated, main.strTempPassword
+		$sql = "select main.*
 				from " . $this->_table . " as main
 				where " . $where;
 		return $this->getResult($sql);
@@ -199,12 +196,9 @@ class account extends db_class
 
 	function accountArray($data)
 	{
-		global $prefix;
-
 		$modified = array(
 			'strFullName' => $data['name'],
 			'email' => @$data['strEmail'],
-			'strActivation' => @$data['activate'],
 			'idCreatedBy' => $_SESSION[PF . 'USERID'],
 			'dtiCreated' => TODAY_DATETIME,
 			'idModifiedBy' => $_SESSION[PF . 'USERID'],
@@ -219,7 +213,6 @@ class account extends db_class
 
 		if ($data['no-email'] == 1) {
 			unset($modified['strEmail']);
-			unset($modified['strActivation']);
 			$modified['status'] = '1';
 			$modified['strTempPassword'] = $data['temp_pwd'];
 		}
@@ -301,33 +294,6 @@ class account extends db_class
 		return $this->getResult($sql);
 	}
 
-	/** This function verify the particular account as per the condition
-	 * @param $activation_code :  Activation code,
-	 *                         $email_hash:As per the email hash
-	 * @return int|array : return 404 if no data available for the query,
-	 *                         otherwise return false
-	 */
-	function verifyAccount($email_hash, $activation_code)
-	{
-
-		$sql = "select * from " . $this->_table . "
-                where sha1(concat('" . PASSWORD_HASH . "', strEmail)) = '" . $email_hash . "'
-                and tinStatus = '0' and strActivation = '" . $activation_code . "'";
-		$data = $this->getResult($sql);
-
-		if ($data != 404) {
-
-			$where = "id = " . $data['id'];
-			$data = array('tinStatus' => '1',
-				'dtiLastLogin' => TODAY_DATETIME,
-				'enmActivated' => '1');
-			$this->updateAccount($data, $where);
-			return true;
-		}
-
-		return false;
-	}
-
 	/** Update data from account table
 	   @params $this->_table: mst_account,
 	   $where: id of the account table to update,
@@ -339,12 +305,11 @@ class account extends db_class
 	}
 
 	/** Inserts data into rel_account_login_logs table
-	 * @param array $data: array of the table field name and post data of the fields
 	 * @return bool|int : id of the row inserted otherwise false on failure
 	 */
 	function loginLog(){
-		global $prefix;
-		$data = array('vId' => $_SESSION[PF . 'USERID'],
+		$data = array(
+            'vId' => $_SESSION[PF . 'USERID'],
 			'loginDate' => TODAY_DATETIME,
 			'session' => $_SESSION[PF . 'MAIN'],
 			'ipAddress' => USERIP);
@@ -352,7 +317,7 @@ class account extends db_class
 	}
 
 	/** This function check Login as well as duplication of Mobile or Email id at the time of registation
-	 * @param string $username : email as checking
+	 * @param string $email : email as checking
 	 * @return it returns single result otherwise 404
 	 */
 	function checkEmail($email, $for = 'registration')
@@ -379,7 +344,7 @@ class account extends db_class
 			$mainAdd .= " AND main.tinStatus = '1' AND main.strPassword = '" . $password . "'";
 		}
 
-		$sql = "select main.id, strEmail, strFirstName, strLastName, idDesg, strImageName, enmActivated
+		$sql = "select main.id, strEmail, strFirstName, strLastName, idDesg, strImageName
 				from " . $this->_table . " as main
 				where main.enmDeleted = '0'" . $mainAdd;
 		return $this->getResult($sql);

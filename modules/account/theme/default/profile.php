@@ -50,16 +50,16 @@
                 </div>
                 <div class="form-group">
                 <?php 
-                  if($row['strImgurl'] != "" and $row['strImgurl'] != NULL)
+                  if($row['strImageName'] != "" and $row['strImageName'] != NULL)
                   {
-                  $imgurl = SITE_URL."file-manager/account/avtar/".$row['strImgurl'];
+                  $imgurl = SITE_URL."file-manager/account/avtar/".$row['strImageName'];
                   }else{
                     $imgurl = "";
                   }
                 ?>
                   <label for="imgurl" class="control-label col-lg-2">Profile Pic.</label>
                   <div class="col-lg-10">
-                    <input type="hidden" name="oldimg" id="oldimg" value="<?php _e($row['strImgurl']); ?>">
+                    <input type="hidden" name="oldimg" id="oldimg" value="<?php _e($row['strImageName']); ?>">
                     <div class="fileupload fileupload-new" data-provides="fileupload">
                     <div class="fileupload-new thumbnail" style="width: 140px; height: 140px;">
                         <img src="<?php _e($imgurl); ?>" alt="Select Profile Pic.">
@@ -91,26 +91,6 @@
                     </div>
            </div>
 
-           <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Address</label>
-                    <div class="col-sm-10">
-                        <textarea  class="form-control required" name="address" id="address"><?php _e($row['strAddress']);?></textarea>
-                    </div>
-           </div>
-
-           <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">City</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control required" name="city" id="city" value="<?php _e($row['strCity']); ?>" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Pincode</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control digits" maxlength="6" minLength="6" name="pincode" id="pincode" value="<?php _e($row['strPincode']); ?>" />
-                    </div>
-                </div>
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">Mobile No.</label>
                     <div class="col-sm-10">

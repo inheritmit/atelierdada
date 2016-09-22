@@ -80,8 +80,7 @@
 			
 			$password = String::getHash($_POST['password']);
 			$data = array('strPassword' =>  $password,
-						  'tinStatus' => '1',
-						  'strActivation' => '');
+						  'tinStatus' => '1');
 			$account_obj->updateAccount($data, "id = ".$_POST['ID']);
 			
 			$_SESSION[PF.'MSG'] = 'Your password has been successfully set. You can login to your account now using this password.';

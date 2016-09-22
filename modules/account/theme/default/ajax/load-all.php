@@ -9,7 +9,7 @@
 		
 		$pg = isset($_POST['page']) ? $_POST['page'] : 1;
 		
-		$qAdd = "main.enmDeleted = '0' and main.enmActivated='1'";
+		$qAdd = "main.enmDeleted = '0'";
 		if(isset($_POST['q']) && !empty($_POST['q'])) {
 			$qAdd .= " and fullName like ('%".$_POST['q']."%')";
 		}

@@ -10,9 +10,9 @@ $row = $account_obj->getAccountByID($_SESSION[PF.'USERID']);
     <section class="panel">
         <div class="user-heading round">
 
-                <?php if($row['strImgurl'] != "" && $row['strImgurl'] != NULL){
+                <?php if($row['strImageName'] != "" && $row['strImageName'] != NULL){
                     ?>
-                        <img src="<?php _e(SITE_URL.'file-manager/account/avtar/140/'.$row['strImgurl']); ?>" alt="">
+                        <img src="<?php _e(SITE_URL.'file-manager/account/avtar/140/'.$row['strImageName']); ?>" alt="">
                     <?php 
                     } ?>
 

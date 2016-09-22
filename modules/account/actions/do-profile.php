@@ -6,8 +6,7 @@
 		{  
 			if(File::isAllowedType($_FILES['imgurl']['type']))
 			{
-				//$upload_path = $module_path.'/upload/avtar/';
-				$upload_path=UPLOAD_PATH.'account/avtar/';
+				$upload_path = UPLOAD_PATH.'account/avtar/';
 
 				$time=time();						
 				move_uploaded_file($_FILES['imgurl']['tmp_name'],$upload_path. $time.'_'.$_FILES['imgurl']['name']);
@@ -26,10 +25,8 @@
         $profile_data = array('strFirstName' => $_POST['firstname'],
                               'strLastName' => $_POST['lastname'],
 			                  'strMobile'=>$_POST['mobileno'],
-			                  'strPincode'=>$_POST['pincode'],
-			                  'strCity'=>$_POST['city'],
-                              'dtBirth' => Date::mysqlDate($_POST['birthdate'], 'DD/MM/YYYY'),
-                              'strImgurl' => $imgurl);
+			                  'dtBirth' => Date::mysqlDate($_POST['birthdate'], 'DD/MM/YYYY'),
+                              'strImageName' => $imgurl);
 
 		   $wherecond = "id=".$_POST['account_id'];
 		   $insert_account_data = $account_obj->updateAccount($profile_data,$wherecond);
@@ -38,9 +35,9 @@
 			   	$_SESSION[PF.'MSG'] = 'Profile has been save Successfully';
 				$_SESSION[PF.'NAME'] = $row['strFirstName']." ".$row['strLastName'];
 
-		        if($row['strImgurl'] != "" && $row['strImgurl'] != NULL){
-					$_SESSION['IMAGE']['140'] = SITE_URL.'file-manager/account/avtar/140/'.$row['strImgurl'];
-					$_SESSION['IMAGE']['35'] = SITE_URL.'file-manager/account/avtar/35/'.$row['strImgurl'];
+		        if($row['strImageName'] != "" && $row['strImageName'] != NULL){
+					$_SESSION['IMAGE']['140'] = SITE_URL.'file-manager/account/avtar/140/'.$row['strImageName'];
+					$_SESSION['IMAGE']['35'] = SITE_URL.'file-manager/account/avtar/35/'.$row['strImageName'];
 				}
 
 		    $_SESSION['USERSTATUS'] = true;

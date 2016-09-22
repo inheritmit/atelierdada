@@ -31,7 +31,7 @@ if(isset($req['parent']) && $req['parent'] == 'edit') {
 	_module('master');
 	$mstObj = new master();
 	
-	$access_types = $mstObj->getMasters(1, 'access-type');
+	$access_types = $mstObj->getMasters("enmDeleted = '0'", 'access-type');
 ?>
 <style type="text/css">
 label.error {
@@ -67,7 +67,7 @@ label.error {
                             <div class="form-group">
                                 <label for="title" class="control-label col-lg-4">Title:</label>
 
-                                <div class="col-lg-8">
+                                <div class="col-lg-4">
                                     <select name="title" id="title" class="form-control required">
                                         <option value="" selected="selected">Select Title</option>
                                         <option
@@ -114,30 +114,12 @@ label.error {
                             </div>
 
                             <div class="form-group">
-                                <label for="sel_des" class="control-label col-lg-4">Access Type:</label>
-
-                                <div class="col-lg-8">
-                                    <select name="sel_des" id="sel_des" class="form-control required">
-                                        <option value="" selected="selected"> -- Select --</option>
-                                        <?php
-                                            foreach($access_types as $access_types) {
-                                                ?>
-                                                <option
-                                                    value="<?php echo $access_types['id']; ?>"<?php if(@$accDetail['idDesg'] == $access_types['id']) { ?> selected="selected"<?php } ?>><?php echo $access_types['strAccessType']; ?></option>
-                                                <?php
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="birthdate" class="control-label col-lg-4">Birth Date:</label>
 
                                 <div data-date-viewmode="years" data-date-format="dd-mm-yyyy"
                                      data-date="<?php if(isset($accDetail['dtBirth']) && !empty($accDetail['dtBirth'])) {
                                          echo date('d-m-Y', strtotime($accDetail['dtBirth']));
-                                     } ?>" class="col-lg-7 input-append date dpYears">
+                                     } ?>" class="col-lg-4 input-append date dpYears">
                                     <input type="text"
                                            value="<?php if(isset($accDetail['dtBirth']) && !empty($accDetail['dtBirth'])) {
                                                echo date('d-m-Y', strtotime($accDetail['dtBirth']));
@@ -152,7 +134,7 @@ label.error {
                             <div class="form-group">
                                 <label for="gender" class="control-label col-lg-4">Gender:</label>
 
-                                <div class="col-lg-8">
+                                <div class="col-lg-4">
                                     <select name="gender" id="gender" class="form-control required">
                                         <option value="" selected="selected">Select Gender</option>
                                         <option
@@ -184,16 +166,6 @@ label.error {
                         <div class="form">
 
                             <div class="form-group">
-                                <label for="email" class="control-label col-lg-4">Email:</label>
-
-                                <div class="col-lg-8">
-                                    <input type="text" name="email" id="email"
-                                           value="<?php echo @$accDetail['strEmail']; ?>"<?php if(!empty($accDetail['strEmail'])) { ?> readonly<?php } ?>
-                                           class="form-control"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="mobile" class="control-label col-lg-4">Mobile:</label>
 
                                 <div class="col-lg-8">
@@ -216,6 +188,34 @@ label.error {
                     <header class="panel-heading">Access Details</header>
                     <div class="panel-body">
                         <div class="form">
+
+                            <div class="form-group">
+                                <label for="sel_des" class="control-label col-lg-4">Access Type:</label>
+
+                                <div class="col-lg-4">
+                                    <select name="sel_des" id="sel_des" class="form-control required">
+                                        <option value="" selected="selected"> -- Select --</option>
+                                        <?php
+                                            foreach($access_types as $access_types) {
+                                                ?>
+                                                <option
+                                                    value="<?php echo $access_types['id']; ?>"<?php if(@$accDetail['idDesg'] == $access_types['id']) { ?> selected="selected"<?php } ?>><?php echo $access_types['strAccessType']; ?></option>
+                                                <?php
+                                            }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="control-label col-lg-4">Email:</label>
+
+                                <div class="col-lg-8">
+                                    <input type="text" name="email" id="email"
+                                           value="<?php echo @$accDetail['strEmail']; ?>"<?php if(!empty($accDetail['strEmail'])) { ?> readonly<?php } ?>
+                                           class="form-control"/>
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <label for="password" class="control-label col-lg-4">Password:</label>
@@ -241,7 +241,7 @@ label.error {
                 </section>
             </div>
 
-            <div class="col-lg-offset-2 col-lg-10">
+            <div class="col-lg-offset-8 col-lg-4 text-right">
                 <input class="btn btn-info" type="submit" id="submit" value="Submit" name="submit"/>
                 <input name="cancel" class="btn btn-danger" type="button" id="cancel-button" value="Cancel"
                        onClick="window.location='list'"/>
