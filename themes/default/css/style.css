@@ -4820,7 +4820,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 /****** JK **********/
 .dropdown-menu.extended.logout > li > a > i {display:inline-block;}
 a.logo {margin:5px 0;}
-.fa {display:initial !important;}
+.fa { width: auto; }
 h3.timeline-title {color:inherit;}
 .onProje {margin-bottom:10px;}
 .headingNew{color: #333333; font-size: 18px; font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif; text-align:center; margin-top:8px; margin-bottom:15px;}

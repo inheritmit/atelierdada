@@ -1,6 +1,6 @@
 .inputosaurus-container {
 	background-color: #fff;
-	border: 1px solid #bcbec0;
+	border: 1px solid #e2e2e4;
 	margin: 0 5px 0 0;
 	padding: 0 3px;
 	display: inline-block;
@@ -10,6 +10,7 @@
 	max-height: 300px;
 	overflow: hidden;
 	overflow-y: auto;
+    border-radius: 4px;
 }
 .inputosaurus-container li {
 	display: block;
