@@ -194,7 +194,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-8">
                                                                 <label for="<?php _e($slug); ?>_<?php _e($cnt); ?>"
-                                                                       class="control-label col-lg-2">File
+                                                                       class="control-label col-lg-6">File
                                                                     Upload: </label>
                                                             </div>
                                                             <div class="col-lg-4"><?php _e($block_actions); ?></div>
@@ -232,7 +232,7 @@
                                                         <div class="row">
                                                             <div class="col-lg-8">
                                                         <label for="<?php _e($slug); ?>_<?php _e($cnt); ?>"
-                                                               class="control-label col-lg-2">Images: <a
+                                                               class="control-label col-lg-6">Images: <a
                                                                 onclick="location.href='javascript:void(0);'"
                                                                 class="add-more btn btn-success btn-xs"
                                                                 data-count="<?php _e($cnt); ?>"
@@ -243,23 +243,22 @@
                                                         </div>
 
                                                         <div class="col-lg-12" id="images<?php _e($cnt); ?>">
-                                                            <div class="col-lg-10"><input type="text"
+                                                            <div class="col-lg-10">
+                                                                <input type="text"
                                                                                           name="<?php _e($slug); ?>_title[<?php _e($cnt); ?>]"
                                                                                           id="<?php _e($slug); ?>_title_<?php _e($cnt); ?>"
                                                                                           maxlength="100"
                                                                                           value="<?php _e($block['block_heading']); ?>"
                                                                                           class="form-control"
-                                                                                          placeholder="Heading"/></div>
+                                                                                          placeholder="Heading"/>
+                                                            </div>
                                                             <?php
                                                                 if(isset($image_blocks[$content_block_id])) {
                                                                     foreach($image_blocks[$content_block_id] as $iblock) {
                                                                         ?>
-                                                                        <div class="col-lg-10">
-                                                                            <img
-                                                                                src="<?php _e(UPLOAD_URL); ?>content/medium/<?php _e($iblock['txtContent']); ?>"
-                                                                                alt="image<?php _e($cnt); ?>"/>
+                                                                        <div class="col-lg-4">
+                                                                            <img src="<?php _e(UPLOAD_URL); ?>content/thumbs/<?php _e($iblock['txtContent']); ?>" alt="image<?php _e($cnt); ?>"/>
                                                                         </div>
-                                                                        <div class="col-lg-2">Actions</div>
                                                                         <?php
                                                                         $icnt++;
                                                                     }
@@ -270,7 +269,7 @@
                                                     <?php
                                                 }
 
-                                                if($slug == 'social') {
+                                                if($slug == 'social' && sizeof($block_obj::$SocialShare) > 0) {
                                                     ?>
                                                     <div class="form-group" id="block<?php _e($cnt); ?>">
                                                         <input type="hidden" name="block[<?php _e($cnt); ?>]"
@@ -282,13 +281,14 @@
                                                         <div class="row">
                                                             <div class="col-lg-8">
                                                         <label for="<?php _e($slug); ?>_<?php _e($cnt); ?>"
-                                                               class="control-label col-lg-2">Social Share:</label>
+                                                               class="control-label col-lg-6">Social Share:</label>
                                                             </div>
                                                             <div class="col-lg-4"><?php _e($block_actions); ?></div>
                                                         </div>
 
                                                         <div class="col-lg-12">
-                                                            <div class="col-lg-10 row"><input type="text"
+                                                            <div class="col-lg-10 row">
+                                                                <input type="text"
                                                                                               name="<?php _e($slug); ?>_title[<?php _e($cnt); ?>]"
                                                                                               id="<?php _e($slug); ?>_title_<?php _e($cnt); ?>"
                                                                                               maxlength="100"
@@ -296,8 +296,13 @@
                                                                                               class="form-control"
                                                                                               placeholder="Heading"/>
                                                             </div>
-                                                            <div class="col-lg-10 row">Social sharing for this content
-                                                                entry is enabled.
+                                                            <div class="row">
+                                                                <p>Select social sites to enable sharing for this content</p>
+                                                                <?php foreach($block_obj::$SocialShare as $slug => $link) { ?>
+                                                                <label class="checkbox-inline">
+                                                                    <input type="checkbox" id="social-<?php _e($slug);?>" value="<?php _e($slug);?>"> <i class="fa fa-<?php _e($slug);?>"></i>
+                                                                </label>
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -556,7 +561,9 @@
 
         makeSortable();
 
+        <?php if (isset($req['parent']) && $req['parent'] == 'add-content') { ?>
         $('.page-load').trigger('click');
+        <?php } ?>
     });
 
     function deleteBlock(cnt) {
